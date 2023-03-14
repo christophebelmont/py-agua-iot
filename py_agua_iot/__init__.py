@@ -572,23 +572,23 @@ class Device(object):
 
     @property
     def min_temp(self):
-        return self.__get_information_item_min('temp_air_set')
+        return self.__get_information_item_min('temp_water_set')
 
     @property
     def max_temp(self):
-        return self.__get_information_item_max('temp_air_set')
+        return self.__get_information_item_max('temp_water_set')
 
     @property
     def air_temperature(self):
-        return float(self.__get_information_item('temp_air_get'))
+        return float(self.__get_information_item('temp_water_get'))
 
     @property
     def set_air_temperature(self):
-        return float(self.__get_information_item('temp_air_set'))
+        return float(self.__get_information_item('temp_water_set'))
 
     @set_air_temperature.setter
     def set_air_temperature(self, value):
-        item = 'temp_air_set'
+        item = 'temp_water_set'
         values = [self.__prepare_value_for_writing(item, value)]
         try:
             self.__request_writing(item, values)
