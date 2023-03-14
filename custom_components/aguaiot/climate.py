@@ -161,7 +161,7 @@ class AguaIOTHeatingDevice(ClimateEntity):
     @property
     def current_temperature(self):
         """Return the current temperature."""
-        return self._device.air_temperature
+        return self._device.water_temperature
 
     @property
     def target_temperature(self):
